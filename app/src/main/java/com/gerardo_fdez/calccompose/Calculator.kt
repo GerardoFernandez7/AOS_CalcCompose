@@ -24,10 +24,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.gerardo_fdez.calccompose.ui.theme.Logic
 
 val buttonList = listOf(
-    "C","(",")","/",
+    "^","(",")","/",
     "7","8","9","*",
     "4","5","6","+",
     "1","2","3","-",
@@ -85,7 +84,7 @@ fun CalculatorButton(btn : String,onClick : ()-> Unit) {
         FloatingActionButton(
             onClick = onClick,
             modifier = Modifier.size(80.dp),
-            shape = CircleShape,
+
             contentColor = Color.White,
             containerColor = getColor(btn)
         ) {
@@ -96,11 +95,9 @@ fun CalculatorButton(btn : String,onClick : ()-> Unit) {
 
 
 fun getColor(btn : String) : Color{
-    if(btn == "C" || btn == "AC")
+    if(btn == "AC")
         return Color(0xFFF44336)
-    if(btn == "(" || btn == ")")
-        return Color.Gray
-    if(btn == "/" || btn == "*" || btn == "+" || btn == "-" || btn == "=")
-        return Color(0xFFFF9800)
-    return Color(0xFF00C8C9)
+    if(btn == "/" || btn == "*" || btn == "+" || btn == "-" || btn == "=" || btn == "^" || btn == "(" || btn == ")")
+        return Color(0xFF637AB7)
+    return Color(0xFF67646B)
 }
